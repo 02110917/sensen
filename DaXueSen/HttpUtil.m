@@ -77,7 +77,7 @@ HttpUtil *http=nil;
 {
     NSData * responstDate=[request responseData];
     NSString* responseStr=[[NSString alloc] initWithData:responstDate encoding:NSUTF8StringEncoding];
-    NSLog(@"result:%@",responseStr);
+//    NSLog(@"result:%@",responseStr);
     BaseMessage *msg=[BaseMessage jsonDataToObj:responstDate];
     [self.delegate requestSuccess:request.name andResult:msg];
     

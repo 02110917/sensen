@@ -7,6 +7,7 @@
 //
 
 #import "Config.h"
+#import "Util.h"
 @interface Config()
 @property(nonatomic,strong) NSUserDefaults *defaults;
 @end
@@ -46,14 +47,14 @@ static Config * instance = nil;
     return userInfo;
 }
 -(void)saveUserLoginIWithPhone:(NSString *)phone andPsd:(NSString *)psd{
-    [self.defaults setObject:phone  forKey:@"loginPhone"];
-    [self.defaults setObject:psd forKey:@"loginPsd"];
+    [self.defaults setObject:[Util base64Encode:phone]  forKey:@"loginPhone"];
+    [self.defaults setObject:[Util base64Encode:psd] forKey:@"loginPsd"];
     [self.defaults synchronize];
 }
 -(NSString*)readUserLoginPhone{
-    return [self.defaults objectForKey:@"loginPhone"];
+    return [Util base64Decode:[self.defaults objectForKey:@"loginPhone"]];
 }
 -(NSString*)readUserLoginPsd{
-    return [self.defaults objectForKey:@"loginPsd"];
+    return [Util base64Decode:[self.defaults objectForKey:@"loginPsd"]];
 }
 @end

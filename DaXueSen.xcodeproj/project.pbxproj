@@ -40,7 +40,6 @@
 		6D1D7D6019F8D0A6006E1950 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D7D5F19F8D0A6006E1950 /* School.m */; };
 		6D1D7D6319F8D118006E1950 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D7D6219F8D118006E1950 /* Province.m */; };
 		6D1D7D6619F8D145006E1950 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D7D6519F8D145006E1950 /* City.m */; };
-		6D1D7D6819F8D3F5006E1950 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1D7D6719F8D3F5006E1950 /* SDWebImage.framework */; };
 		6D1D7D6C19F8D46B006E1950 /* HttpUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D7D6B19F8D46B006E1950 /* HttpUtil.m */; };
 		6D1D7D7219F8D6BA006E1950 /* BaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D7D7119F8D6BA006E1950 /* BaseMessage.m */; };
 		6D2046921A025D8500C7ECDD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2046911A025D8500C7ECDD /* ImageIO.framework */; };
@@ -54,6 +53,10 @@
 		6DFC3D2319FFB637007E3DBA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC3D2219FFB637007E3DBA /* MainViewController.m */; };
 		6DFC3D2619FFBE1E007E3DBA /* ForgetPsdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC3D2519FFBE1E007E3DBA /* ForgetPsdViewController.m */; };
 		6DFC3D2919FFBE4A007E3DBA /* RegisteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC3D2819FFBE4A007E3DBA /* RegisteViewController.m */; };
+		C3C6BB7C1A4A4BC0001DCCD0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C6BB7B1A4A4BC0001DCCD0 /* SDWebImage.framework */; };
+		C3C6BB811A4A5044001DCCD0 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C6BB801A4A5044001DCCD0 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C3C6BB841A4A512F001DCCD0 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C6BB831A4A512F001DCCD0 /* Util.m */; };
+		C3D6705B1A4BEB4C004A1A4E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D6705A1A4BEB4B004A1A4E /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +135,6 @@
 		6D1D7D6219F8D118006E1950 /* Province.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Province.m; sourceTree = "<group>"; };
 		6D1D7D6419F8D145006E1950 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		6D1D7D6519F8D145006E1950 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
-		6D1D7D6719F8D3F5006E1950 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = ../../Xiao/SDWebImage.framework; sourceTree = "<group>"; };
 		6D1D7D6A19F8D46B006E1950 /* HttpUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpUtil.h; sourceTree = "<group>"; };
 		6D1D7D6B19F8D46B006E1950 /* HttpUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpUtil.m; sourceTree = "<group>"; };
 		6D1D7D7019F8D6BA006E1950 /* BaseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMessage.h; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 		6DFC3D2519FFBE1E007E3DBA /* ForgetPsdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPsdViewController.m; sourceTree = "<group>"; };
 		6DFC3D2719FFBE4A007E3DBA /* RegisteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteViewController.h; sourceTree = "<group>"; };
 		6DFC3D2819FFBE4A007E3DBA /* RegisteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteViewController.m; sourceTree = "<group>"; };
+		C3C6BB7B1A4A4BC0001DCCD0 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		C3C6BB7E1A4A4FF5001DCCD0 /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		C3C6BB7F1A4A5044001DCCD0 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		C3C6BB801A4A5044001DCCD0 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		C3C6BB821A4A512F001DCCD0 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		C3C6BB831A4A512F001DCCD0 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		C3D670591A4BEB4B004A1A4E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C3D6705A1A4BEB4B004A1A4E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,12 +174,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C6BB7C1A4A4BC0001DCCD0 /* SDWebImage.framework in Frameworks */,
 				6D2046921A025D8500C7ECDD /* ImageIO.framework in Frameworks */,
 				6D1D7D5119F8CBE4006E1950 /* libz.1.2.5.dylib in Frameworks */,
 				6D1D7D4F19F8CBD1006E1950 /* SystemConfiguration.framework in Frameworks */,
 				6D1D7D4D19F8CBC3006E1950 /* MobileCoreServices.framework in Frameworks */,
 				6D1D7D4B19F8CBB4006E1950 /* CoreGraphics.framework in Frameworks */,
-				6D1D7D6819F8D3F5006E1950 /* SDWebImage.framework in Frameworks */,
 				6D1D7D4919F8CBA2006E1950 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +224,7 @@
 		6D1D7CCF19F8BD6A006E1950 /* DaXueSen */ = {
 			isa = PBXGroup;
 			children = (
+				C3C6BB861A4A5D0F001DCCD0 /* SupportFiles */,
 				6D08974E1A072A8C00A95190 /* Me */,
 				6DFC3D2019FFB61E007E3DBA /* MainSquare */,
 				6DFC3D1C19FFB3C8007E3DBA /* Util */,
@@ -221,8 +232,6 @@
 				6D1D7D7319F8E78A006E1950 /* User */,
 				6D1D7D6919F8D458006E1950 /* Http */,
 				6D1D7D4719F8CB4C006E1950 /* Frameworks */,
-				6D1D7D4019F8CAFF006E1950 /* Json */,
-				6D1D7D0119F8CA93006E1950 /* ASIHttpRequest */,
 				6D1D7CF319F8BD83006E1950 /* Entity */,
 				6D1D7CD419F8BD6A006E1950 /* AppDelegate.h */,
 				6D1D7CD519F8BD6A006E1950 /* AppDelegate.m */,
@@ -338,8 +347,8 @@
 		6D1D7D4719F8CB4C006E1950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3C6BB7B1A4A4BC0001DCCD0 /* SDWebImage.framework */,
 				6D2046911A025D8500C7ECDD /* ImageIO.framework */,
-				6D1D7D6719F8D3F5006E1950 /* SDWebImage.framework */,
 				6D1D7D5019F8CBE4006E1950 /* libz.1.2.5.dylib */,
 				6D1D7D4E19F8CBD1006E1950 /* SystemConfiguration.framework */,
 				6D1D7D4C19F8CBC3006E1950 /* MobileCoreServices.framework */,
@@ -383,6 +392,8 @@
 			children = (
 				6DFC3D1D19FFB3E7007E3DBA /* Config.h */,
 				6DFC3D1E19FFB3E7007E3DBA /* Config.m */,
+				C3C6BB821A4A512F001DCCD0 /* Util.h */,
+				C3C6BB831A4A512F001DCCD0 /* Util.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -398,6 +409,36 @@
 				6DF94FDD1A0141A7001F8298 /* MainTableViewCell.m */,
 			);
 			name = MainSquare;
+			sourceTree = "<group>";
+		};
+		C3C6BB7D1A4A4FE0001DCCD0 /* GTM */ = {
+			isa = PBXGroup;
+			children = (
+				C3C6BB7E1A4A4FF5001DCCD0 /* GTMDefines.h */,
+				C3C6BB7F1A4A5044001DCCD0 /* GTMBase64.h */,
+				C3C6BB801A4A5044001DCCD0 /* GTMBase64.m */,
+			);
+			name = GTM;
+			sourceTree = "<group>";
+		};
+		C3C6BB861A4A5D0F001DCCD0 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C3D670581A4BEB1E004A1A4E /* MBProgressHUD */,
+				6D1D7D4019F8CAFF006E1950 /* Json */,
+				6D1D7D0119F8CA93006E1950 /* ASIHttpRequest */,
+				C3C6BB7D1A4A4FE0001DCCD0 /* GTM */,
+			);
+			name = SupportFiles;
+			sourceTree = "<group>";
+		};
+		C3D670581A4BEB1E004A1A4E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C3D670591A4BEB4B004A1A4E /* MBProgressHUD.h */,
+				C3D6705A1A4BEB4B004A1A4E /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,12 +555,15 @@
 				6D1D7D5D19F8D035006E1950 /* Image.m in Sources */,
 				6D1D7D4519F8CB29006E1950 /* Jastor.m in Sources */,
 				6DF94FDE1A0141A7001F8298 /* MainTableViewCell.m in Sources */,
+				C3C6BB811A4A5044001DCCD0 /* GTMBase64.m in Sources */,
 				6DFB4A7F1A49AA5D00F0ED1B /* MainNavigationController.m in Sources */,
 				6D1D7CF819F8BE3D006E1950 /* Userinfo.m in Sources */,
+				C3C6BB841A4A512F001DCCD0 /* Util.m in Sources */,
 				6DF94FE11A0151B3001F8298 /* CommonMessage.m in Sources */,
 				6D1D7D5A19F8CFA8006E1950 /* Photo.m in Sources */,
 				6DFC3D2919FFBE4A007E3DBA /* RegisteViewController.m in Sources */,
 				6D1D7D3C19F8CAF0006E1950 /* ASIHTTPRequest.m in Sources */,
+				C3D6705B1A4BEB4C004A1A4E /* MBProgressHUD.m in Sources */,
 				6D1D7CD919F8BD6A006E1950 /* ViewController.m in Sources */,
 				6DFC3D2319FFB637007E3DBA /* MainViewController.m in Sources */,
 				6D1D7D3919F8CAF0006E1950 /* ASIDataDecompressor.m in Sources */,
@@ -656,6 +700,7 @@
 					"$(inherited)",
 					/Users/zhangmin/Documents/wokspace/Xiao,
 					/Users/zhangmin/Documents/wokspace/CauculateScore/CauculateScore/Xiao,
+					"$(PROJECT_DIR)/DaXueSen",
 				);
 				INFOPLIST_FILE = DaXueSen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -678,6 +723,7 @@
 					"$(inherited)",
 					/Users/zhangmin/Documents/wokspace/Xiao,
 					/Users/zhangmin/Documents/wokspace/CauculateScore/CauculateScore/Xiao,
+					"$(PROJECT_DIR)/DaXueSen",
 				);
 				INFOPLIST_FILE = DaXueSen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

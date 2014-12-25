@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface MainViewController : ViewController<UITableViewDataSource,UITableViewDelegate>
+@interface MainViewController :UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property(nonatomic,strong) NSArray* contents;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewGril;
 @end

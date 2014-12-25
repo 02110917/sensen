@@ -14,12 +14,14 @@
 
 - (void)awakeFromNib {
     // Initialization code
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    
 }
 -(void)initCollectionView{
     self.viewImages.dataSource=self;
@@ -46,10 +48,9 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if(self.imageUrls)
-        return self.imageUrls.count;
-    else
+    if(!self.imageUrls)
         return 0;
+    return self.imageUrls.count;
 }
 
 
