@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D978269F-99B7-4AD9-888C-3F6FB095C774</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DaXueSen</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9611BD5C76DCCF84B4AFA517972EA61C9D325BE5</key>
+		<string>github.com:02110917/sensen.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DaXueSen.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9611BD5C76DCCF84B4AFA517972EA61C9D325BE5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:02110917/sensen.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9611BD5C76DCCF84B4AFA517972EA61C9D325BE5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9611BD5C76DCCF84B4AFA517972EA61C9D325BE5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sensen</string>
+		</dict>
+	</array>
+</dict>
+</plist>
