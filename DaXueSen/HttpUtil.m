@@ -27,7 +27,13 @@ HttpUtil *http=nil;
     [request setName:name];
     [request startAsynchronous];
 }
-
+-(void)httpGetWithUrl:(NSString *)url andRequestResultDelegate:(id)delegate{
+    ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:[[NSURL alloc]initWithString:url]];
+    [request setDelegate:delegate];
+    [request setUseCookiePersistence : YES ];
+    [request setTimeOutSeconds:TIME_OUT];
+    [request startAsynchronous];
+}
 -(void)httpPostWithUrl:(NSString *)url andName:(NSString*)name andParams:(NSMutableDictionary *)params andRequestResultDelegate:(id<RequestResultDelegate>)delegate{
     self.delegate=delegate;
     ASIFormDataRequest *requestForm = [[ASIFormDataRequest alloc] initWithURL:[[NSURL alloc]initWithString:url]];

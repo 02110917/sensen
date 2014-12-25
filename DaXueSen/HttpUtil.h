@@ -23,6 +23,7 @@
 +(HttpUtil*)getHttpUtil;
 
 -(void) httpGetWithUrl:(NSString*)url andName:(NSString*)name andRequestResultDelegate:(id<RequestResultDelegate>)delegate;
+-(void)httpGetWithUrl:(NSString *)url andRequestResultDelegate:(id)delegate;
 -(void) httpPostWithUrl:(NSString*)url andName:(NSString*)name andParams:(NSMutableDictionary*)params andRequestResultDelegate:(id<RequestResultDelegate>)delegate;
 -(void) httpPostWithUrl:(NSString*)url andName:(NSString*)name andParams:(NSMutableDictionary*)params andFiles:(NSMutableDictionary*)files  andRequestResultDelegate:(id<RequestResultDelegate>)delegate;
 

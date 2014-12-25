@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PubContentController : UIViewController
+@interface PubContentController : UIViewController<UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *mTvInput;
 @property (weak, nonatomic) IBOutlet UIButton *mViewAddImageBtn;
 @property (weak, nonatomic) IBOutlet UILabel *mLabelLocation;

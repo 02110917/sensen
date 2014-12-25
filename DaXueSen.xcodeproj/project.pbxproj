@@ -44,6 +44,7 @@
 		6D1D7D7219F8D6BA006E1950 /* BaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D7D7119F8D6BA006E1950 /* BaseMessage.m */; };
 		6D2046921A025D8500C7ECDD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2046911A025D8500C7ECDD /* ImageIO.framework */; };
 		6D20549C1A0260DE00C7ECDD /* pictures_no.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D20549B1A0260DE00C7ECDD /* pictures_no.png */; };
+		6D94B7411A4BED5100AF0438 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D94B7401A4BED5100AF0438 /* CoreLocation.framework */; };
 		6DF94FD81A013A20001F8298 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF94FD71A013A20001F8298 /* MainTabBarController.m */; };
 		6DF94FDE1A0141A7001F8298 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF94FDD1A0141A7001F8298 /* MainTableViewCell.m */; };
 		6DF94FE11A0151B3001F8298 /* CommonMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF94FE01A0151B3001F8298 /* CommonMessage.m */; };
@@ -144,6 +145,7 @@
 		6D1D7D7119F8D6BA006E1950 /* BaseMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMessage.m; sourceTree = "<group>"; };
 		6D2046911A025D8500C7ECDD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		6D20549B1A0260DE00C7ECDD /* pictures_no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pictures_no.png; sourceTree = "<group>"; };
+		6D94B7401A4BED5100AF0438 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6DF94FD61A013A20001F8298 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		6DF94FD71A013A20001F8298 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		6DF94FDC1A0141A7001F8298 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D94B7411A4BED5100AF0438 /* CoreLocation.framework in Frameworks */,
 				C3C6BB7C1A4A4BC0001DCCD0 /* SDWebImage.framework in Frameworks */,
 				6D2046921A025D8500C7ECDD /* ImageIO.framework in Frameworks */,
 				6D1D7D5119F8CBE4006E1950 /* libz.1.2.5.dylib in Frameworks */,
@@ -354,6 +357,7 @@
 		6D1D7D4719F8CB4C006E1950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D94B7401A4BED5100AF0438 /* CoreLocation.framework */,
 				C3C6BB7B1A4A4BC0001DCCD0 /* SDWebImage.framework */,
 				6D2046911A025D8500C7ECDD /* ImageIO.framework */,
 				6D1D7D5019F8CBE4006E1950 /* libz.1.2.5.dylib */,
