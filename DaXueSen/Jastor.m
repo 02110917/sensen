@@ -66,7 +66,7 @@ Class nsArrayClass;
 		if ((objectIdValue = [dictionary objectForKey:idPropertyName]) && objectIdValue != [NSNull null]) {
 			if (![objectIdValue isKindOfClass:[NSString class]]) {
 				objectIdValue = [NSString stringWithFormat:@"%@", objectIdValue];
-			}
+			}            
 			[self setValue:objectIdValue forKey:idPropertyNameOnObject];
 		}
 	}

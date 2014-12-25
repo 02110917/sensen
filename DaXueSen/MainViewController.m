@@ -53,14 +53,6 @@ static NSString * const cellId=@"mainsquaretablecell";
     [refreshView addSubview:re];
     return re;
 }
-//-(void)addBottomLoadMoreViewTo:(UITableView*)tableView with:(UIButton*)button{
-//    _bottomRefresh = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [_bottomRefresh setTitle:@"查看更多" forState:UIControlStateNormal];
-//    [_bottomRefresh setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [_bottomRefresh setContentEdgeInsets:UIEdgeInsetsMake(15, 0, 0, 0)];
-//    [_bottomRefresh addTarget:self action:@selector(upToRefresh) forControlEvents:UIControlEventTouchUpInside];
-//
-//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -74,15 +66,6 @@ static NSString * const cellId=@"mainsquaretablecell";
     self.tableViewGril.delegate=self;
     _refresh=[self addRefreshViewTo:_tableView];
     _refreshGril=[self addRefreshViewTo:_tableViewGril];
-    /******自定义查看更多属性设置******/
-//    _bottomRefresh = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [_bottomRefresh setTitle:@"查看更多" forState:UIControlStateNormal];
-//    [_bottomRefresh setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [_bottomRefresh setContentEdgeInsets:UIEdgeInsetsMake(15, 0, 0, 0)];
-//    [_bottomRefresh addTarget:self action:@selector(upToRefresh) forControlEvents:UIControlEventTouchUpInside];
-//    _bottomRefresh.frame = CGRectMake(0, 44+_rowCount*RCellHeight, 320, RCellHeight);
-//    [self.tableView addSubview:_bottomRefresh];
-//    [self.tableView addSubview:refresh];
     _contentsSquare=[[NSMutableArray alloc]init];
     _contentsGril=[[NSMutableArray alloc]init];
     _currectArray=_contentsSquare;
