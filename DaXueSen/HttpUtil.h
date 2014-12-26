@@ -15,7 +15,7 @@
 #define HOST @"http://182.92.229.130/"
 #define URL_LOGIN @"%@index.php/Home/user/login?user=%@&psd=%@"
 #define URL_GET_CONTENT @"%@index.php/Home/content/getContent?type=%d&page=%d&size=%d"
-
+#define URL_PUB_CONTENT @"%@index.php/Home/content/pubContent"
 
 @protocol RequestResultDelegate;
 @interface HttpUtil : NSObject

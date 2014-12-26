@@ -18,4 +18,21 @@
     NSData *data =[GTMBase64 decodeString:input];
     return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
 }
++(NSString*)savaImageToDocument:(UIImage *)image WithName:(NSString *)fileName{
+    NSData *data=UIImageJPEGRepresentation(image, 0.7f);
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    // Now we get the full path to the file
+    NSString* fullPathToFile = [documentsDirectory stringByAppendingPathComponent:fileName];
+    // and then we write it out
+    [data writeToFile:fullPathToFile atomically:NO];
+    return fullPathToFile;
+}
++(NSString *)documentFolderPath
+{
+    return [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+}
++(NSString*)getImagePathWithName:(NSString *)imageName{
+    return [NSString stringWithFormat:@"%@/%@",[Util documentFolderPath],imageName];
+}
 @end

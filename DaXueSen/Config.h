@@ -10,7 +10,7 @@
 #import "Userinfo.h"
 @interface Config : NSObject
 @property(nonatomic,getter=isLogin,setter=setLogin:)BOOL isLogin;
-@property(nonatomic,strong)Userinfo*userInfo;
+@property(nonatomic,strong,getter=getUserInfo,setter=setUserInfo:)Userinfo*userInfo;
 -(BOOL)isLogin;
 -(void)setLogin:(BOOL)isLogin;
 -(Userinfo*)getUserInfo;

@@ -73,6 +73,7 @@ HttpUtil *http=nil;
             [requestForm setFile:[files objectForKey:str] forKey:str];
         }
     }
+    [requestForm addRequestHeader:@"Content-Type" value:@"multipart/form-data"];
     [requestForm setDelegate:self];
     [ requestForm setUseCookiePersistence : YES ];
     [requestForm setName:name];

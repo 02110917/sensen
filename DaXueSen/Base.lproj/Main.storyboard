@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nHB-6S-7qM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nHB-6S-7qM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -26,8 +26,8 @@
                                     <action selector="hideKerBoard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QfY-af-Wz7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RBN-7K-ITP">
-                                <rect key="frame" x="227" y="123" width="146" height="154"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RBN-7K-ITP">
+                                <rect key="frame" x="227" y="79" width="146" height="198"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="DKO-qK-Q31"/>
                                 </constraints>
@@ -547,8 +547,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF7-by-u8W">
-                                <rect key="frame" x="16" y="240" width="61" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pF7-by-u8W">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -577,17 +576,22 @@
                             <constraint firstItem="KOi-Wf-M5x" firstAttribute="trailing" secondItem="3H0-fl-5u1" secondAttribute="trailing" id="h44-S5-zXB"/>
                             <constraint firstItem="jcJ-9q-f7f" firstAttribute="top" secondItem="sUo-Op-zNs" secondAttribute="bottom" constant="1" id="llD-S6-oTb"/>
                             <constraint firstItem="pF7-by-u8W" firstAttribute="leading" secondItem="KOi-Wf-M5x" secondAttribute="leading" id="uAk-Y4-yoG"/>
-                            <constraint firstItem="pF7-by-u8W" firstAttribute="top" secondItem="KOi-Wf-M5x" secondAttribute="bottom" constant="8" symbolic="YES" id="vy9-CY-yhZ"/>
+                            <constraint firstItem="pF7-by-u8W" firstAttribute="top" secondItem="KOi-Wf-M5x" secondAttribute="bottom" constant="10" id="vy9-CY-yhZ"/>
                             <constraint firstItem="jcJ-9q-f7f" firstAttribute="centerX" secondItem="KOi-Wf-M5x" secondAttribute="centerX" id="woh-JF-cQx"/>
                             <constraint firstItem="KOi-Wf-M5x" firstAttribute="top" secondItem="3H0-fl-5u1" secondAttribute="bottom" constant="8" symbolic="YES" id="xEa-43-BWE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发状态" id="dek-i8-T5H">
                         <barButtonItem key="backBarButtonItem" title="返回" id="NTd-5t-T0d"/>
-                        <barButtonItem key="rightBarButtonItem" title="发表" id="cjl-op-CwZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="发表" id="cjl-op-CwZ">
+                            <connections>
+                                <action selector="pubContentAction:" destination="nAn-G7-yzp" id="NHz-1v-MV7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="locationTopConstraint" destination="vy9-CY-yhZ" id="6ve-ZV-cer"/>
                         <outlet property="mLabelLocation" destination="pF7-by-u8W" id="RIf-l5-mPi"/>
                         <outlet property="mTvInput" destination="3H0-fl-5u1" id="lcz-DA-SVX"/>
                         <outlet property="mViewAddImageBtn" destination="KOi-Wf-M5x" id="ZEj-as-Wfz"/>

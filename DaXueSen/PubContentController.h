@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface PubContentController : UIViewController<UIActionSheetDelegate>
+#import "ELCImagePickerHeader.h"
+@interface PubContentController : UIViewController<UIActionSheetDelegate,ELCImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *mTvInput;
 @property (weak, nonatomic) IBOutlet UIButton *mViewAddImageBtn;
 @property (weak, nonatomic) IBOutlet UILabel *mLabelLocation;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *locationTopConstraint;
    
 @end
