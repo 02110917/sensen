@@ -102,8 +102,10 @@ static NSString * const cellId=@"mainsquaretablecell";
     if(cell==nil){
         cell=[[MainTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
     }
+    cell.parentController=self;
     NSInteger rowNo=indexPath.row;
     Content*content=[self.currectArray objectAtIndex:rowNo];
+    cell.content=content;
     cell.viewContent.text=content.con_info;
     CGRect size=cell.viewContent.bounds;
     int height=[MainViewController heightForString:content.con_info withWidth:size.size.width andFontSize:14];
@@ -233,15 +235,17 @@ static NSString * const cellId=@"mainsquaretablecell";
         [_currectTableView reloadData];
     }
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"toPersonalCard"]){
+//         segue.destinationViewController;
+        MainTableViewCell*cell=sender;
+         [segue.destinationViewController setValue:[NSNumber numberWithLong:cell.content.con_user_id] forKey:@"userId"];
+    }
 }
-*/
 
 @end

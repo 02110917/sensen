@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Content.h"
 @interface MainTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *viewHeadImage;
 @property (weak, nonatomic) IBOutlet UILabel *viewUserName;
@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *viewImages;
 @property (weak, nonatomic) IBOutlet UILabel *viewLocation;
 @property(strong,nonatomic)NSArray*imageUrls ;
+@property(strong,nonatomic)Content*content;
+@property(strong,nonatomic)UIViewController*parentController;
 -(void)initCollectionView;
 @end

@@ -10,13 +10,24 @@
 #import "Image.h"
 #import "HttpUtil.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "PersonalCardViewController.h"
 @implementation MainTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
-
+    _viewHeadImage.clipsToBounds=YES;
+    _viewHeadImage.layer.cornerRadius=30;
+    [_viewHeadImage setUserInteractionEnabled:YES];
+    [_viewHeadImage addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickCategory:)]];
 }
-
+-(void)clickCategory:(UITapGestureRecognizer *)gestureRecognizer
+{
+    long userId=_content.con_user_id;
+    //PersonalCardViewController *personalCard = [[PersonalCardViewController alloc] initWithNibName:<#(NSString *)#> bundle:<#(NSBundle *)#>];
+//    if(self.parentController&&self.parentController.navigationController)
+//        [self.parentController.navigationController pushViewController:personalCard animated:YES];
+    [self.parentController performSegueWithIdentifier:@"toPersonalCard" sender:self];
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

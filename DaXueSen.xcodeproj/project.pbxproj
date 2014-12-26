@@ -66,6 +66,13 @@
 		C359CCAE1A4CF76000AB6335 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = C359CCA21A4CF76000AB6335 /* ELCAssetTablePicker.xib */; };
 		C359CCAF1A4CF76000AB6335 /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCA31A4CF76000AB6335 /* Overlay.png */; };
 		C359CCB01A4CF76000AB6335 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCA41A4CF76000AB6335 /* Overlay@2x.png */; };
+		C359CCB41A4D491B00AB6335 /* PersonalCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C359CCB31A4D491B00AB6335 /* PersonalCardViewController.m */; };
+		C359CCB71A4D626400AB6335 /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCB61A4D626400AB6335 /* photo.png */; };
+		C359CCBB1A4D651C00AB6335 /* btn_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCB91A4D651C00AB6335 /* btn_pressed.png */; };
+		C359CCBC1A4D651C00AB6335 /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCBA1A4D651C00AB6335 /* btn.png */; };
+		C359CCBE1A4D69DC00AB6335 /* personal_card_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCBD1A4D69DC00AB6335 /* personal_card_bg.png */; };
+		C359CCC11A4D6C4E00AB6335 /* tab_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCBF1A4D6C4E00AB6335 /* tab_normal.png */; };
+		C359CCC21A4D6C4E00AB6335 /* tab_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C359CCC01A4D6C4E00AB6335 /* tab_pressed.png */; };
 		C3C6BB7C1A4A4BC0001DCCD0 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C6BB7B1A4A4BC0001DCCD0 /* SDWebImage.framework */; };
 		C3C6BB811A4A5044001DCCD0 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C6BB801A4A5044001DCCD0 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C3C6BB841A4A512F001DCCD0 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C6BB831A4A512F001DCCD0 /* Util.m */; };
@@ -198,6 +205,14 @@
 		C359CCA21A4CF76000AB6335 /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ELCAssetTablePicker.xib; sourceTree = "<group>"; };
 		C359CCA31A4CF76000AB6335 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		C359CCA41A4CF76000AB6335 /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
+		C359CCB21A4D491B00AB6335 /* PersonalCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCardViewController.h; sourceTree = "<group>"; };
+		C359CCB31A4D491B00AB6335 /* PersonalCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCardViewController.m; sourceTree = "<group>"; };
+		C359CCB61A4D626400AB6335 /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		C359CCB91A4D651C00AB6335 /* btn_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_pressed.png; sourceTree = "<group>"; };
+		C359CCBA1A4D651C00AB6335 /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
+		C359CCBD1A4D69DC00AB6335 /* personal_card_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personal_card_bg.png; sourceTree = "<group>"; };
+		C359CCBF1A4D6C4E00AB6335 /* tab_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_normal.png; sourceTree = "<group>"; };
+		C359CCC01A4D6C4E00AB6335 /* tab_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_pressed.png; sourceTree = "<group>"; };
 		C3C6BB7B1A4A4BC0001DCCD0 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		C3C6BB7E1A4A4FF5001DCCD0 /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		C3C6BB7F1A4A5044001DCCD0 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
@@ -268,6 +283,7 @@
 		6D1D7CCF19F8BD6A006E1950 /* DaXueSen */ = {
 			isa = PBXGroup;
 			children = (
+				C359CCB51A4D625700AB6335 /* images */,
 				C3C6BB861A4A5D0F001DCCD0 /* SupportFiles */,
 				6D08974E1A072A8C00A95190 /* Me */,
 				6DFC3D2019FFB61E007E3DBA /* MainSquare */,
@@ -415,12 +431,15 @@
 		6D1D7D7319F8E78A006E1950 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				C359CCB81A4D64B400AB6335 /* images */,
 				6DFC3D1919FFAFBC007E3DBA /* LoginViewController.h */,
 				6DFC3D1A19FFAFBC007E3DBA /* LoginViewController.m */,
 				6DFC3D2419FFBE1E007E3DBA /* ForgetPsdViewController.h */,
 				6DFC3D2519FFBE1E007E3DBA /* ForgetPsdViewController.m */,
 				6DFC3D2719FFBE4A007E3DBA /* RegisteViewController.h */,
 				6DFC3D2819FFBE4A007E3DBA /* RegisteViewController.m */,
+				C359CCB21A4D491B00AB6335 /* PersonalCardViewController.h */,
+				C359CCB31A4D491B00AB6335 /* PersonalCardViewController.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -494,6 +513,26 @@
 				C359CCA41A4CF76000AB6335 /* Overlay@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C359CCB51A4D625700AB6335 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C359CCB61A4D626400AB6335 /* photo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		C359CCB81A4D64B400AB6335 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C359CCBF1A4D6C4E00AB6335 /* tab_normal.png */,
+				C359CCC01A4D6C4E00AB6335 /* tab_pressed.png */,
+				C359CCBD1A4D69DC00AB6335 /* personal_card_bg.png */,
+				C359CCB91A4D651C00AB6335 /* btn_pressed.png */,
+				C359CCBA1A4D651C00AB6335 /* btn.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		C3C6BB7D1A4A4FE0001DCCD0 /* GTM */ = {
@@ -616,16 +655,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C359CCBE1A4D69DC00AB6335 /* personal_card_bg.png in Resources */,
 				C359CCAC1A4CF76000AB6335 /* ELCAlbumPickerController.xib in Resources */,
 				C359CCAD1A4CF76000AB6335 /* ELCAssetPicker.xib in Resources */,
 				C359CCAE1A4CF76000AB6335 /* ELCAssetTablePicker.xib in Resources */,
 				C3D6705E1A4BFB3A004A1A4E /* pub_content_edit_bg.png in Resources */,
 				6D1D7CDC19F8BD6A006E1950 /* Main.storyboard in Resources */,
 				C359CCB01A4CF76000AB6335 /* Overlay@2x.png in Resources */,
+				C359CCC11A4D6C4E00AB6335 /* tab_normal.png in Resources */,
 				C3D670601A4BFDBC004A1A4E /* add_images.png in Resources */,
+				C359CCBB1A4D651C00AB6335 /* btn_pressed.png in Resources */,
+				C359CCBC1A4D651C00AB6335 /* btn.png in Resources */,
 				C359CCAF1A4CF76000AB6335 /* Overlay.png in Resources */,
 				6D20549C1A0260DE00C7ECDD /* pictures_no.png in Resources */,
 				6D1D7CDE19F8BD6A006E1950 /* Images.xcassets in Resources */,
+				C359CCC21A4D6C4E00AB6335 /* tab_pressed.png in Resources */,
+				C359CCB71A4D626400AB6335 /* photo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +692,7 @@
 				C359CCA61A4CF76000AB6335 /* ELCAsset.m in Sources */,
 				6DFC3D2619FFBE1E007E3DBA /* ForgetPsdViewController.m in Sources */,
 				6D1D7D3D19F8CAF0006E1950 /* ASIInputStream.m in Sources */,
+				C359CCB41A4D491B00AB6335 /* PersonalCardViewController.m in Sources */,
 				6D1D7D6619F8D145006E1950 /* City.m in Sources */,
 				C3D670771A4C1E4F004A1A4E /* PubContentController.m in Sources */,
 				6D1D7CFE19F8C998006E1950 /* Content.m in Sources */,
