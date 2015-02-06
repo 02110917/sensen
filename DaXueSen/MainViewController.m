@@ -56,14 +56,17 @@ static NSString * const cellId=@"mainsquaretablecell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //_tableViewGril.hidden=YES;
     [self.view bringSubviewToFront:_tableView];
     _screenWidth=[ UIScreen mainScreen].applicationFrame.size.width;
     // Do any additional setup after loading the view.
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableViewGril.dataSource=self;
     self.tableViewGril.delegate=self;
+    self.tableViewGril.separatorStyle = UITableViewCellSeparatorStyleNone;
     _refresh=[self addRefreshViewTo:_tableView];
     _refreshGril=[self addRefreshViewTo:_tableViewGril];
     _contentsSquare=[[NSMutableArray alloc]init];

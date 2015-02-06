@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+[self.tabBarController.tabBar setHidden:YES];
     // Do any additional setup after loading the view.
 }
 
