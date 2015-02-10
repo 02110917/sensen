@@ -7,8 +7,11 @@
 //
 
 #import "Userinfo.h"
-
+#import "Photo.h"
 @implementation Userinfo
++(Class)photos_class{
+    return [Photo class];
+}
 +(Userinfo *)jsonDataToObj:(NSData *)data{
     Userinfo *userinfo=nil;
     NSError *error = nil;

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Content.h"
-@interface MainTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
+#import "MWPhotoBrowser.h"
+@interface MainTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,MWPhotoBrowserDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *viewHeadImage;
 @property (weak, nonatomic) IBOutlet UILabel *viewUserName;
 @property (weak, nonatomic) IBOutlet UILabel *viewData;

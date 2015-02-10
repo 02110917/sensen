@@ -45,7 +45,7 @@
 -(void)requestSuccess:(NSString *)requestName andResult:(BaseMessage *)msg{
     if(msg)
     {
-        if([msg.code isEqualToString:@"1000"]){ //登陆成功
+        if(msg.code==1000){ //登陆成功
             Userinfo* userinfo=[Userinfo dirToObj:msg.result];
             Config *config=[Config instance];
             config.userInfo=userinfo;

@@ -9,7 +9,7 @@
 #import "Jastor.h"
 
 @interface BaseMessage : Jastor
-@property(nonatomic,strong) NSString* code ;
+@property(nonatomic,assign) NSInteger code ;
 @property(nonatomic,strong) NSString* message ;
 @property(nonatomic,strong) id result ;
 +(BaseMessage *)jsonDataToObj:(NSData *)data;

@@ -9,6 +9,7 @@
 #import "HttpUtil.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @implementation HttpUtil
 HttpUtil *http=nil;
 +(HttpUtil*)getHttpUtil{
@@ -30,6 +31,19 @@ HttpUtil *http=nil;
 -(void)httpGetWithUrl:(NSString *)url andRequestResultDelegate:(id)delegate{
     ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:[[NSURL alloc]initWithString:url]];
     [request setDelegate:delegate];
+    [request setUseCookiePersistence : YES ];
+    [request setTimeOutSeconds:TIME_OUT];
+    [request startAsynchronous];
+}
+-(void)httpGetWithUrl:(NSString *)url andRequestSuccessBlock:(RequestSuccess)success andFiledBlock:(RequestFail)failed{
+    ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:[[NSURL alloc]initWithString:url]];
+    __weak typeof(ASIHTTPRequest*) weakRequest=request;
+    [request setCompletionBlock:^{
+        success([weakRequest responseData]);
+    }];
+    [request setFailedBlock:^{
+        failed([weakRequest error].description);
+    }];
     [request setUseCookiePersistence : YES ];
     [request setTimeOutSeconds:TIME_OUT];
     [request startAsynchronous];
@@ -79,6 +93,35 @@ HttpUtil *http=nil;
     [requestForm setName:name];
     [requestForm setTimeOutSeconds:TIME_OUT];
     [requestForm startAsynchronous];
+}
+-(void)httpDownLoadImageWithUrl:(NSString *)url andSuccessBlock:(void (^)(UIImage *))success andFailedBlock:(void (^)(NSError *))failed{
+    [self httpDownLoadImageWithUrl:url andSuccessBlock:success andProgressBlock:nil andFailedBlock:failed];
+}
+-(void)httpDownLoadImageWithUrl:(NSString *)url andSuccessBlock:(void (^)(UIImage *))success andProgressBlock:(void (^)(float))progress andFailedBlock:(void (^)(NSError *))failed{
+    NSURL*u=[[NSURL alloc]initWithString:url];
+    [[SDWebImageManager sharedManager] downloadWithURL:u options:SDWebImageLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize){
+        if(progress){
+            progress(receivedSize*0.1/expectedSize);
+        }
+    } completed:^(UIImage *aImage, NSError *error, SDImageCacheType cacheType, BOOL finished) {
+        if(error){
+            failed(error);
+        }else{
+            success(aImage);
+        }
+    }];
+}
+-(void)httpDownLoadImageWithUrl:(NSString *)url andDisplatImageView:(UIImageView *)imageView andErrorImageName:(NSString*)defaultImage showProgress:(BOOL)isShowProgress{
+    [self httpDownLoadImageWithUrl:url andSuccessBlock:^(UIImage* image){
+        imageView.image=image;
+    } andProgressBlock:^(float progress){
+        if(isShowProgress){
+            
+        }
+    }andFailedBlock:^(NSError *error){
+        UIImage *image=[UIImage imageNamed:defaultImage];
+        imageView.image=image;
+    }];
 }
 - (void)requestFinished:(ASIHTTPRequest *)request
 {

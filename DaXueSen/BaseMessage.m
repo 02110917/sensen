@@ -16,7 +16,7 @@
     if(dic)
     {
         message=[[BaseMessage alloc]init];
-        message.code=[dic valueForKey:@"code"];
+        message.code=[[dic valueForKey:@"code"] intValue];
         message.message=[dic valueForKey:@"message"];
         message.result=[dic valueForKey:@"result"];
 //        message=[[BaseMessage alloc]initWithDictionary:dic];

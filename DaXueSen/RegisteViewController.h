@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
-@interface RegisteViewController : ViewController
+@interface RegisteViewController : ViewController<RequestResultDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *viewInputPhoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *viewInputPassword;
 
 @end

@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "ELCImagePickerHeader.h"
-@interface PubContentController : UIViewController<UIActionSheetDelegate,ELCImagePickerControllerDelegate>
+@class LocationPoi;
+@protocol ReturnValueDelegate <NSObject>
+
+-(void)setReturnValue:(id)value forKey:(NSString*)key;
+@end
+
+@interface PubContentController : UIViewController<UIActionSheetDelegate,ELCImagePickerControllerDelegate,ReturnValueDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextView *mTvInput;
 @property (weak, nonatomic) IBOutlet UIButton *mViewAddImageBtn;
-@property (weak, nonatomic) IBOutlet UILabel *mLabelLocation;
+@property (weak, nonatomic) IBOutlet UIButton *mButtonLocation;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *locationTopConstraint;
-   
+@property(nonatomic,strong)NSArray*locationPoisArray;
+@property(nonatomic,strong)LocationPoi* currectPoi;
 @end

@@ -14,6 +14,7 @@
 #import "ASIHTTPRequest.h"
 #import "Config.h"
 #import "Util.h"
+#import "LocationPoi.h"
 @interface PubContentController ()<CLLocationManagerDelegate,ASIHTTPRequestDelegate,RequestResultDelegate>
 @property(nonatomic,strong)UIActionSheet *actionSheet;
 @property(nonatomic,strong)CLLocationManager *locationManager ;
@@ -27,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _currectPoi=nil;
     _imagesArray=[NSMutableArray new];
     _screenWidth=[UIScreen mainScreen].applicationFrame.size.width;
     UIImageView* addImage=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
@@ -62,9 +64,11 @@
         [_locationManager startUpdatingLocation];
     }
 }
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
      CLLocation *loc = [locations objectAtIndex:0];
-    [[HttpUtil getHttpUtil]httpGetWithUrl:[[NSString alloc]initWithFormat:@"http://apis.map.qq.com/ws/geocoder/v1?location=%f,%f&coord_type=1&get_poi=1&key=3ODBZ-QIIH5-K5SIF-QYM5F-7Y6G2-FYBSK&output=json",loc.coordinate.latitude,loc.coordinate.longitude] andRequestResultDelegate:self];
+    NSString*url=[[NSString alloc]initWithFormat:URL_LOCATION,HOST,loc.coordinate.latitude,loc.coordinate.longitude];
+    [[HttpUtil getHttpUtil] httpGetWithUrl:url andName:@"location" andRequestResultDelegate:self];
     
     [_locationManager stopUpdatingLocation];//3ODBZ-QIIH5-K5SIF-QYM5F-7Y6G2-FYBSK
 }
@@ -80,7 +84,6 @@
         elcPicker.returnsImage = NO; //Return UIimage if YES. If NO, only return asset location information
         elcPicker.onOrder = YES; //For multiple image selection, display and return order of selected images
         elcPicker.mediaTypes = @[(NSString *)kUTTypeImage]; //Supports image and movie types //, (NSString *)kUTTypeMovie
-        
         elcPicker.imagePickerDelegate = self;
         
         [self presentViewController:elcPicker animated:YES completion:nil];
@@ -96,7 +99,7 @@
         CGRect rect=_mViewAddImageBtn.frame;
         CGFloat d=(rect.size.width-30)/4.0;
         CGFloat h=(size/4+1)*(d+10)-10;
-        _scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, h)];
+        _scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, h>200?200:h)];
         _scrollView.directionalLockEnabled = YES; //只能一个方向滑动
         _scrollView.pagingEnabled = NO; //是否翻页
         _scrollView.showsVerticalScrollIndicator =YES; //垂直方向的滚动指示
@@ -128,8 +131,8 @@
         }
 //        rect=_mLabelLocation.frame;
 //        _mLabelLocation.frame=CGRectMake(rect.origin.x, rect.origin.y+(h-50), rect.size.width, rect.size.height);
-        _locationTopConstraint.constant=h-40;
-        [_mLabelLocation updateConstraintsIfNeeded];
+        _locationTopConstraint.constant=h>200?200:h-40;
+        [_mButtonLocation updateConstraintsIfNeeded];
         UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(i%4*d+10*(i%4), (i/4)*d+(i/4)*10, d, d)];
         [btn addTarget:self action:@selector(addImages:) forControlEvents:UIControlEventTouchUpInside];
         [btn setImage:[UIImage imageNamed:@"add_images.png"] forState:UIControlStateNormal];
@@ -146,14 +149,6 @@
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (void)requestFinished:(ASIHTTPRequest *)request{
-    NSData*data=[request responseData];
-    NSString* str=[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"result:%@",str);
-}
-- (void)requestFailed:(ASIHTTPRequest *)request{
-    
-}
 - (IBAction)addImages:(id)sender {
     [_actionSheet showInView:self.view];
 }
@@ -169,7 +164,7 @@
         return;
     }
     NSString*content=_mTvInput.text;
-    NSString*location=_mLabelLocation.text;
+    NSString*location=[_mButtonLocation titleForState:UIControlStateNormal];
     NSMutableDictionary*params=[NSMutableDictionary new];
     [params setValue:content forKey:@"con_info"];
     [params setValue:location forKey:@"con_location"];
@@ -184,7 +179,7 @@
             i++;
         }
     }
-    [[HttpUtil getHttpUtil]httpPostWithUrl:[NSString stringWithFormat:URL_PUB_CONTENT,HOST] andName:@"pub content"  andParams:params andFiles:files andRequestResultDelegate:self];
+    [[HttpUtil getHttpUtil]httpPostWithUrl:[NSString stringWithFormat:URL_PUB_CONTENT,HOST] andName:@"pubcontent"  andParams:params andFiles:files andRequestResultDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -193,19 +188,45 @@
 }
 
 -(void)requestSuccess:(NSString *)requestName andResult:(BaseMessage *)msg{
-    
+    if([requestName isEqualToString:@"location"]){
+        if(msg.code==0){
+            _locationPoisArray=[LocationPoi jsonToArray:msg.result];
+            if(_locationPoisArray.count>0){
+                self.currectPoi=[_locationPoisArray objectAtIndex:0];
+                [self.mButtonLocation setTitle:[self.currectPoi valueForKey:@"title"] forState:UIControlStateNormal];
+            }
+        }else{
+            //请求poi信息失败
+        }
+    }else if([requestName isEqualToString:@"pubcontent"]){
+        
+    }
 }
 -(void)requestFail:(NSString *)requestName andError:(NSString *)error{
     
 }
-/*
+
+#pragma mark - ReturnValue Delegate
+
+-(void)setReturnValue:(id)value forKey:(NSString *)key{
+    [self setValue:value forKey:key];
+    if([key isEqualToString:@"currectPoi"]){
+        [self.mButtonLocation setTitle:self.currectPoi.title forState:UIControlStateNormal];
+    }
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"topoilist"]){
+        id controller=segue.destinationViewController;
+        [controller setValue:_locationPoisArray forKey:@"pois"];
+        [controller setValue:_currectPoi forKey:@"currectPoi"];
+        [controller setValue:self forKey:@"delegate"];
+    }
 }
-*/
+
 
 @end

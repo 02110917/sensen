@@ -12,7 +12,6 @@
 #import "MainTableViewCell.h"
 #import "Content.h"
 #import "MBProgressHUD.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 @interface MainViewController ()
 @property(nonatomic,strong) NSMutableArray* contentsSquare;
 @property(nonatomic,strong) NSMutableArray* contentsGril;
@@ -117,10 +116,9 @@ static NSString * const cellId=@"mainsquaretablecell";
     cell.viewData.text=content.con_pub_time.description;
     cell.viewLocation.text=content.con_location;
     cell.viewUserName.text=content.userinfo.user_nick_name;
-    NSURL*headImageUrl=[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",HOST,content.userinfo.user_head_image_url]];
-    [[SDWebImageManager sharedManager] downloadWithURL:headImageUrl options:SDWebImageLowPriority progress:nil completed:^(UIImage *aImage, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-        cell.viewHeadImage.image = aImage;
-    }];
+//    NSURL*headImageUrl=[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",HOST,content.userinfo.user_head_image_url]];
+    NSString*headImageUrl=[NSString stringWithFormat:@"%@/%@",HOST,content.userinfo.user_head_image_url];
+    [[HttpUtil getHttpUtil]httpDownLoadImageWithUrl:headImageUrl andDisplatImageView:cell.viewHeadImage andErrorImageName:@"photo.png" showProgress:NO];
     if(content.images){
         //int height=cell.contentView.bounds.size.height;
         //cell.collectionViewTopConstraint.constant=height;
@@ -191,7 +189,7 @@ static NSString * const cellId=@"mainsquaretablecell";
         [_currectRefresh endRefreshing];
         _currectRefresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     }
-    if([msg.code isEqualToString:@"2000"])
+    if(msg.code==2000)
     {
         if([_currectRefresh isRefreshing]){
             [_currectArray removeAllObjects];

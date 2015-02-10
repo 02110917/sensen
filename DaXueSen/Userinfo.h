@@ -18,6 +18,10 @@
 @property(nonatomic,strong)NSString* user_hobbies;
 @property(nonatomic) int user_sex; //0 男  1女
 @property(nonatomic) int user_school_id;
+@property(nonatomic,strong)NSString* school_name;
+@property(nonatomic,strong)NSString* city_name;
+@property(nonatomic,strong)NSString* province_name;
+@property(nonatomic,strong)NSArray*photos;
 @property(nonatomic) int user_score;
 @property(nonatomic) int user_phone_is_verify; //0:未验证 1:已验证
 @property(nonatomic) int uer_attention_count;
