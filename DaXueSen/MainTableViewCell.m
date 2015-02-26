@@ -48,7 +48,7 @@
     //cell.layer.masksToBounds=YES;
     NSInteger rowNo=indexPath.row;
     if(self.imageUrls&&self.imageUrls.count>0){
-        UIImageView *iv=(UIImageView*)[cell viewWithTag:1];
+        UIImageView *iv=(UIImageView*)[cell viewWithTag:11];
         Image *image=[self.imageUrls objectAtIndex:rowNo];
         NSString *imageUrl=[NSString stringWithFormat:@"%@/%@",HOST,image.image_small_url];
         iv.image=[UIImage imageNamed: @"pictupres_no.png"];
@@ -62,7 +62,13 @@
         return 0;
     return self.imageUrls.count;
 }
-
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.imageUrls.count==1)
+        return CGSizeMake(100, 120);
+    else
+        return CGSizeMake(60, 70);
+}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     _photos=[NSMutableArray array];

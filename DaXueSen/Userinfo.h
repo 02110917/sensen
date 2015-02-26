@@ -24,7 +24,7 @@
 @property(nonatomic,strong)NSArray*photos;
 @property(nonatomic) int user_score;
 @property(nonatomic) int user_phone_is_verify; //0:未验证 1:已验证
-@property(nonatomic) int uer_attention_count;
+@property(nonatomic) int user_attention_count;
 @property(nonatomic) int user_fans_count;
 @property(nonatomic) int user_dynamic_count;
 +(Userinfo *)jsonDataToObj:(NSData *)data;

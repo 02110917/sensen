@@ -22,6 +22,7 @@ typedef void(^RequestFail)(NSString*); //Http请求失败block
 #define URL_GET_CONTENT @"%@index.php/Home/content/getContent?type=%d&page=%d&size=%d"
 #define URL_PUB_CONTENT @"%@index.php/Home/content/pubContent"
 #define URL_GET_USER_INFO @"%@index.php/Home/user/getUserInfo?userId=%ld"
+#define URL_GET_MY_INFO @"%@index.php/Home/user/getMyInfo?userId=%ld"
 #define URL_LOCATION @"%@index.php/Home/Location/location?lat=%f&lng=%f"
 @protocol RequestResultDelegate;
 @interface HttpUtil : NSObject

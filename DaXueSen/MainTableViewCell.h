@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Content.h"
 #import "MWPhotoBrowser.h"
-@interface MainTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,MWPhotoBrowserDelegate>
+@interface MainTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,MWPhotoBrowserDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *viewHeadImage;
 @property (weak, nonatomic) IBOutlet UILabel *viewUserName;
 @property (weak, nonatomic) IBOutlet UILabel *viewData;
-@property (weak, nonatomic) IBOutlet UILabel *viewContent;
+@property (weak, nonatomic) IBOutlet UITextView *viewContent;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImagesHeight;
 @property (weak, nonatomic) IBOutlet UICollectionView *viewImages;
 @property (weak, nonatomic) IBOutlet UILabel *viewLocation;
 @property(strong,nonatomic)NSArray*imageUrls ;
